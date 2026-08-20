@@ -1,193 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sorcery Hub | Tools for Sorcery: Contested Realm</title>
-  <meta name="description" content="Community tools, trackers, and utilities for Sorcery: Contested Realm players and collectors."/>
-  
-  <!-- Google Fonts: MedievalSharp for headings + system sans for body -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Open-source tools and utilities for Sorcery: Contested Realm players and collectors.">
+  <meta name="theme-color" content="#0b0c0d">
+  <title>sorcery.no | Community Tools for Sorcery: Contested Realm</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  
-  <style>
-    :root {
-      --bg: #0f0e0e;
-      --card-bg: #1a1818;
-      --text: #f0e6d2;
-      --accent: #d4a017;
-      --accent-dark: #b8860b;
-      --border: #3a2f1e;
-    }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Inter', system-ui, sans-serif;
-      line-height: 1.6;
-      min-height: 100vh;
-    }
-    
-    header {
-      text-align: center;
-      padding: 5rem 1rem 3rem;
-      background: linear-gradient(to bottom, #1a1818, var(--bg));
-      border-bottom: 1px solid var(--border);
-    }
-    
-    h1 {
-      font-family: 'MedievalSharp', cursive;
-      font-size: 3.8rem;
-      color: var(--accent);
-      text-shadow: 0 0 12px rgba(212,160,23,0.4);
-      margin-bottom: 0.5rem;
-    }
-    
-    .tagline {
-      font-size: 1.4rem;
-      color: #c9b8a0;
-      max-width: 700px;
-      margin: 1rem auto;
-    }
-    
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-    
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-      margin: 4rem 0;
-    }
-    
-    .project-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      overflow: hidden;
-      transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
-    }
-    
-    .project-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 32px rgba(212,160,23,0.12);
-    }
-    
-    .card-header {
-      background: linear-gradient(to right, #2a1f0f, #3a2f1e);
-      padding: 1.2rem;
-      text-align: center;
-      border-bottom: 2px solid var(--accent-dark);
-    }
-    
-    .card-header h3 {
-      font-family: 'MedievalSharp', cursive;
-      font-size: 1.9rem;
-      color: var(--accent);
-      margin: 0;
-    }
-    
-    .card-body {
-      padding: 1.5rem;
-    }
-    
-    .card-body p {
-      margin-bottom: 1rem;
-      color: #d9d0c0;
-    }
-    
-    .btn {
-      display: inline-block;
-      background: var(--accent);
-      color: #111;
-      padding: 0.8rem 1.6rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background 0.2s;
-      margin-top: 0.5rem;
-    }
-    
-    .btn:hover {
-      background: #e6b923;
-    }
-    
-    footer {
-      text-align: center;
-      padding: 3rem 1rem;
-      color: #8a7a5f;
-      border-top: 1px solid var(--border);
-      font-size: 0.95rem;
-    }
-    
-    @media (max-width: 600px) {
-      h1 { font-size: 2.8rem; }
-      .projects { gap: 1.5rem; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-  <header>
-    <h1>Sorcery Hub</h1>
-    <p class="tagline">Practical tools & utilities for Sorcery: Contested Realm players, collectors, and the Contested Realm community</p>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="sorcery.no home">SORCERY<span>.NO</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#tools">Tools</a>
+      <a href="https://github.com/Kraxiloth/Sorcery" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+    </nav>
   </header>
 
-  <div class="container">
-    <section class="projects">
-      <div class="project-card">
-        <div class="card-header">
-          <h3>ResTracker</h3>
-        </div>
-        <div class="card-body">
-          <p>In-game resource tracker: mana pools, thresholds, life totals, turns & more. A proven community favorite for smooth play sessions.</p>
-          <a href="https://counter.sorcery.no/" class="btn">Try Live</a>
-          <a href="https://github.com/Kraxiloth/ResTracker" class="btn">View on GitHub</a>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="card-header">
-          <h3>CardScribe</h3>
-        </div>
-        <div class="card-body">
-          <p>Paste card lists → auto-parse, fetch TCGPlayer prices, generate polished Discord-ready selling/buying/trading posts in seconds.</p>
-          <a href="https://cardscribe.sorcery.no" class="btn">Try Live</a>
-          <a href="https://github.com/Kraxiloth/CardScribe" class="btn">View on GitHub</a>
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-art" aria-hidden="true"></div>
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="eyebrow">UNOFFICIAL COMMUNITY TOOLBOX</p>
+        <h1 id="hero-title">Tools for the<br><em>Contested Realm.</em></h1>
+        <p class="intro">A small collection of free, open-source utilities built to make playing, trading and collecting Sorcery a little easier.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#tools">Explore the tools <span aria-hidden="true">↓</span></a>
+          <a class="text-link" href="https://github.com/Kraxiloth/Sorcery" target="_blank" rel="noopener">Source on GitHub <span aria-hidden="true">↗</span></a>
         </div>
       </div>
-
-      <div class="project-card">
-        <div class="card-header">
-          <h3>In a Binder</h3>
-        </div>
-        <div class="card-body">
-          <p>Figure out how to optimally store your Sorcery TCG collection.</p>
-          <a href="https://binder.sorcery.no" class="btn">Try Live</a>
-          <a href="https://github.com/Kraxiloth/In-a-Binder" class="btn">View on GitHub</a>
-        </div>
-      </div>
-
-      <!-- Add more cards as needed, e.g. future tools -->
-      <!-- <div class="project-card">...</div> -->
     </section>
-  </div>
+
+    <section class="tools" id="tools" aria-labelledby="tools-title">
+      <div class="section-heading reveal">
+        <div>
+          <p class="eyebrow">THE WORKSHOP</p>
+          <h2 id="tools-title">Choose a tool.</h2>
+        </div>
+        <p>Each project runs directly in your browser and links back to its source. No accounts, no subscriptions, no mysterious cloud-based nonsense required.</p>
+      </div>
+
+      <div class="tool-list">
+        <article class="tool reveal">
+          <div class="tool-number">01</div>
+          <div class="tool-main">
+            <p class="tool-type">GAME COMPANION</p>
+            <h3>ResTracker</h3>
+            <p>Track life, mana, elemental thresholds, turns and other in-game resources from one purpose-built interface.</p>
+            <div class="tool-actions">
+              <a class="button primary" href="https://counter.sorcery.no/">Launch ResTracker <span aria-hidden="true">↗</span></a>
+              <a class="text-link" href="https://github.com/Kraxiloth/ResTracker" target="_blank" rel="noopener">View source <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+          <div class="tool-glyph" aria-hidden="true">✦</div>
+        </article>
+
+        <article class="tool reveal">
+          <div class="tool-number">02</div>
+          <div class="tool-main">
+            <p class="tool-type">TRADING UTILITY</p>
+            <h3>CardScribe</h3>
+            <p>Paste card lists, parse them automatically, fetch TCGplayer prices and turn the result into clean Discord-ready buying, selling or trading posts.</p>
+            <div class="tool-actions">
+              <a class="button primary" href="https://cardscribe.sorcery.no">Launch CardScribe <span aria-hidden="true">↗</span></a>
+              <a class="text-link" href="https://github.com/Kraxiloth/CardScribe" target="_blank" rel="noopener">View source <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+          <div class="tool-glyph" aria-hidden="true">◇</div>
+        </article>
+
+        <article class="tool reveal">
+          <div class="tool-number">03</div>
+          <div class="tool-main">
+            <p class="tool-type">COLLECTION UTILITY</p>
+            <h3>In a Binder</h3>
+            <p>Calculate how to store a Sorcery collection efficiently and work out the binder capacity you actually need before buying yet another binder.</p>
+            <div class="tool-actions">
+              <a class="button primary" href="https://binder.sorcery.no">Launch In a Binder <span aria-hidden="true">↗</span></a>
+              <a class="text-link" href="https://github.com/Kraxiloth/In-a-Binder" target="_blank" rel="noopener">View source <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+          <div class="tool-glyph" aria-hidden="true">▱</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="open-source reveal">
+      <p class="eyebrow">BUILT IN THE OPEN</p>
+      <h2>Useful first.<br><em>Everything else second.</em></h2>
+      <p>These are fan-made tools built for the Sorcery community. The code is public, the live versions are free to use, and the collection can grow whenever another unnecessarily specific problem demands a tiny web app.</p>
+      <a class="button outline" href="https://github.com/Kraxiloth/Sorcery" target="_blank" rel="noopener">Browse the GitHub repository <span aria-hidden="true">↗</span></a>
+    </section>
+  </main>
 
   <footer>
-    <p>Built with passion for Sorcery: Contested Realm • Fan-made, not affiliated with Erik's Curiosa • © 2026 Kraxiloth</p>
-    <p><a href="https://github.com/Kraxiloth/Sorcery" style="color: var(--accent);">View source on GitHub</a></p>
+    <div class="footer-brand">SORCERY<span>.NO</span></div>
+    <p>Fan-made community tools. Not affiliated with or endorsed by Erik's Curiosa.</p>
+    <p>© <span id="year">2026</span> Kraxiloth</p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
