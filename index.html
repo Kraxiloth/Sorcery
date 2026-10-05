@@ -15,11 +15,30 @@ header{border-bottom:1px solid var(--line)}.header-row{min-height:80px;display:f
 @media(max-width:700px){.wrap{width:calc(100% - 32px)}.header-row{min-height:70px;gap:12px}.brand{font-size:21px}nav{gap:16px}nav .desktop-link{display:none}.intro{display:block;padding:24px 0}.intro>p{max-width:none;margin-top:12px}.apps{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 18px}.descriptor{font-size:10px;letter-spacing:.08em;margin-bottom:12px}.app-art{margin-bottom:14px}h2{font-size:22px}.description{font-size:12px;margin-bottom:18px}.launch{font-size:11px}.below{display:block}.workshop-link{display:inline-block;margin-top:12px}.external{display:block}.external p{margin-top:6px}footer{display:block}footer p+p{margin-top:6px}}
 @media(max-width:380px){.apps{grid-template-columns:1fr}.app-art{max-width:230px}.description{font-size:14px;max-width:290px}.launch{font-size:13px}.descriptor{font-size:11px}.app{padding-bottom:8px}}
 @media(prefers-reduced-motion:reduce){.app-art img{transition:none}a.app-art:hover img{transform:none}}
+
+[hidden]{display:none!important}
+.header-links{display:flex;align-items:center;justify-content:flex-end;gap:24px;flex-wrap:wrap}
+.account{display:flex;align-items:center;justify-content:flex-end;gap:10px;position:relative;flex-wrap:wrap}
+.account-action{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:9px 14px;border:1px solid #82704d;border-radius:2px;background:#22221f;color:var(--paper);font:600 12px Arial,Helvetica,sans-serif;cursor:pointer;white-space:nowrap}
+.account-action:hover{background:#302b22;border-color:var(--gold);color:#ffe1a4}
+.account-action:disabled{opacity:.6;cursor:wait}
+.account-profile{display:flex;align-items:center;gap:10px;min-width:0}
+.account-avatar{width:32px;height:32px;object-fit:cover;border-radius:50%;flex-shrink:0}
+.account-name{font-size:13px;max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.account-status{font-size:12px;color:var(--muted);margin:0;flex-basis:100%;text-align:right;max-width:260px}
+.account-status:empty{display:none}
+@media(max-width:1100px){.header-row{flex-wrap:wrap;padding-block:14px}.header-links{gap:16px}}
+@media(max-width:700px){.header-links{width:100%;justify-content:space-between;gap:10px}.header-links nav{font-size:12px}.account-name{max-width:100px}.account-action{padding-inline:10px}.account-status{text-align:left}.header-row{gap:8px}}
+@media(max-width:420px){.header-links{align-items:flex-start;flex-direction:column}.account{justify-content:flex-start}.account-name{max-width:170px}}
 </style>
 </head>
 <body>
 <a class="skip" href="#apps">Skip to apps</a>
-<header><div class="wrap header-row"><a class="brand" href="./" aria-label="Sorcery.no home">SORCERY<span>.NO</span></a><nav aria-label="Main navigation"><a class="desktop-link" href="#apps">Apps</a><a class="desktop-link" href="https://discord.gg/JXsKMAVe7p">Discord ↗</a><a href="https://ancient.dev/">Ancient Workshop ↗</a></nav></div></header>
+<header><div class="wrap header-row"><a class="brand" href="./" aria-label="Sorcery.no home">SORCERY<span>.NO</span></a><div class="header-links"><nav aria-label="Main navigation"><a class="desktop-link" href="#apps">Apps</a><a class="desktop-link" href="https://discord.gg/JXsKMAVe7p">Discord ↗</a><a href="https://ancient.dev/">Ancient Workshop ↗</a></nav><div class="account" aria-label="Sorcery.no account">
+<a id="account-login" class="account-action" href="https://api.sorcery.no/auth/discord">Log in with Discord</a>
+<div id="account-profile" class="account-profile" hidden><img id="account-avatar" class="account-avatar" width="32" height="32" alt="" referrerpolicy="no-referrer" hidden><span id="account-name" class="account-name"></span><button id="account-logout" class="account-action" type="button">Log out</button></div>
+<p id="account-status" class="account-status" role="status" aria-live="polite"></p>
+</div></div></div></header>
 <main class="wrap"><section class="intro" aria-labelledby="page-title"><div><p class="eyebrow">Sorcery: Contested Realm</p><h1 id="page-title">Your tools for the realm.</h1></div><p>Free community tools for playing, collecting and building your next deck.</p></section>
 <section class="apps" id="apps" aria-label="Community apps"><article class="app" aria-labelledby="Realm_Tracker-name"><p class="descriptor">Game Companion</p><a class="app-art" href="https://counter.sorcery.no/" aria-label="Launch Realm Tracker"><img src="assets/Realm_Tracker.webp" width="560" height="560" alt="Realm Tracker" fetchpriority="high"></a><h2 id="Realm_Tracker-name">Realm Tracker</h2><p class="description">Keep life, mana, elemental thresholds, turns and other in-game resources visible at a glance.</p><a class="launch" href="https://counter.sorcery.no/">Launch Realm Tracker <span aria-hidden="true">↗</span></a></article>
 <article class="app" aria-labelledby="Ledger-name"><p class="descriptor">Collection Tracker</p><a class="app-art" href="https://ledger.sorcery.no/" aria-label="Launch Ledger"><img src="assets/Ledger.webp" width="560" height="560" alt="Ledger" fetchpriority="high"></a><h2 id="Ledger-name">Ledger</h2><p class="description">Organize your collection, build decks and explore your deck statistics. Compatible with Curiosa.io and CardNexus.</p><a class="launch" href="https://ledger.sorcery.no/">Launch Ledger <span aria-hidden="true">↗</span></a></article>
@@ -29,4 +48,89 @@ header{border-bottom:1px solid var(--line)}.header-row{min-height:80px;display:f
 <section class="below" aria-labelledby="workshop-title"><div><h3 id="workshop-title">From Ancient Workshop</h3><p>App presentations, source code and design notes live at Ancient Workshop, alongside the other projects.</p></div><a class="workshop-link" href="https://ancient.dev/">Explore Ancient Workshop <span aria-hidden="true">↗</span></a></section>
 <aside class="external" aria-label="External community tool"><a href="https://tcgcollectortools.com/?game=sorcery">TCG Collector Tools ↗</a><p>External price tracking, market signals and cross-marketplace comparisons.</p></aside>
 </main><footer class="wrap"><p>Fan-made tools. Not affiliated with or endorsed by Erik's Curiosa.</p><p>© 2026 Kraxiloth · <a href="https://discord.gg/JXsKMAVe7p">Discord</a></p></footer>
+<script>
+(() => {
+  const api = 'https://api.sorcery.no';
+  const login = document.getElementById('account-login');
+  const profile = document.getElementById('account-profile');
+  const name = document.getElementById('account-name');
+  const avatar = document.getElementById('account-avatar');
+  const logout = document.getElementById('account-logout');
+  const status = document.getElementById('account-status');
+  let busy = false;
+  let requestVersion = 0;
+
+  function loggedOut() {
+    profile.hidden = true;
+    login.hidden = false;
+    avatar.hidden = true;
+    avatar.removeAttribute('src');
+    name.textContent = '';
+  }
+
+  async function refreshAccount() {
+    if (busy) return;
+    const version = ++requestVersion;
+    try {
+      const response = await fetch(`${api}/me`, {
+        credentials: 'include', cache: 'no-store', signal: AbortSignal.timeout(10000)
+      });
+      if (version !== requestVersion) return;
+      if (response.status === 401) {
+        loggedOut();
+        status.textContent = '';
+        return;
+      }
+      if (!response.ok) throw new Error('Account unavailable');
+      const data = await response.json();
+      if (version !== requestVersion) return;
+      if (!data.authenticated || !data.user) throw new Error('Invalid account response');
+      name.textContent = data.user.display_name || data.user.discord_display_name || 'Sorcery.no account';
+      const imageUrl = data.user.avatar_url;
+      avatar.hidden = true;
+      avatar.removeAttribute('src');
+      if (typeof imageUrl === 'string' && imageUrl.startsWith('https://cdn.discordapp.com/avatars/')) {
+        avatar.src = imageUrl;
+        avatar.hidden = false;
+      }
+      login.hidden = true;
+      profile.hidden = false;
+      status.textContent = '';
+    } catch {
+      if (version === requestVersion) status.textContent = 'Account status unavailable. Refresh to retry.';
+    }
+  }
+
+  avatar.addEventListener('error', () => { avatar.hidden = true; });
+  logout.addEventListener('click', async () => {
+    if (busy) return;
+    busy = true;
+    ++requestVersion;
+    logout.disabled = true;
+    logout.textContent = 'Logging out…';
+    status.textContent = '';
+    try {
+      const response = await fetch(`${api}/auth/logout`, {
+        method: 'POST', credentials: 'include', signal: AbortSignal.timeout(10000)
+      });
+      if (!response.ok) throw new Error('Logout failed');
+      loggedOut();
+      status.textContent = 'Logged out of Sorcery.no.';
+    } catch {
+      status.textContent = 'Could not log out. Please try again.';
+    } finally {
+      busy = false;
+      logout.disabled = false;
+      logout.textContent = 'Log out';
+    }
+  });
+  window.addEventListener('pageshow', refreshAccount);
+  window.addEventListener('focus', refreshAccount);
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') refreshAccount();
+  });
+  refreshAccount();
+})();
+</script>
+
 </body></html>
